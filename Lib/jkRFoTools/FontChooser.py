@@ -83,6 +83,9 @@ class ProcessFonts(BaseWindowController):
         self.w.close()
     
     def ok(self, sender=None):
+        self.w.cancel_button.enable(False)
+        self.w.ok_button.enable(False)
+        
         fonts = self.w.font_list.getSelection()
         
         progress = ProgressWindow(
@@ -104,6 +107,10 @@ class ProcessFonts(BaseWindowController):
             )
         progress.close()
         self.w.result_list.set(results)
+        
+        self.w.cancel_button.setTitle("Close")
+        self.w.cancel_button.enable(True)
+        self.w.ok_button.enable(True)
     
     def copy_result(self, sender):
         from string import strip
