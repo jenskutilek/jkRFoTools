@@ -95,6 +95,8 @@ class ProcessFonts(BaseWindowController):
             if i in fonts:
                 progress.update("Processing %s %s ..." % (font.info.familyName, font.info.styleName))
                 result = self.function(font)
+                if result is None:
+                    result = "Unknown"
                 results.append(
                     {
                         "Font": "%s %s" % (font.info.familyName, font.info.styleName),
