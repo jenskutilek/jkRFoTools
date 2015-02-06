@@ -6,8 +6,8 @@ def getSelectedOrCurrentGlyphNamesList(f):
         If the Font Window is active, return selected glyph names
         If a Glyph Windows is active, return current glyph name
     """
+    if CurrentGlyph() is not None:
+        return [CurrentGlyph().name]
     if f.selection:
-        glyph_list = f.selection
-    else:
-        glyph_list = [CurrentGlyph().name]
-    return glyph_list
+        return f.selection
+    return []
