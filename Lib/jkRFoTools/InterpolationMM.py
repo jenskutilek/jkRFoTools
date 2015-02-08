@@ -163,8 +163,8 @@ class jkInterpolator(object):
         ]
         try:
             bias, iK = buildMutator(kerningMasters)
-            instanceKerning = iM.makeInstance(instanceLocation)
-            instanceKerning.extractInfo(targetFont)
+            instanceKerning = iK.makeInstance(instanceLocation)
+            instanceKerning.extractKerning(targetFont)
         except:
             print(u'Couldn’t interpolate font kerning')
     
