@@ -35,7 +35,7 @@ class jkInstance(object):
 
 class jkInterpolator(object):
     
-    def __init__(self, family_name, base_path=None, instance_dir=None, progressWindow=None):
+    def __init__(self, family_name, base_path=None, instance_dir=None, progressWindow=None, postInterpolateCallback=None):
         self.family_name = family_name
         self.base_path = base_path
         self.instance_dir = instance_dir
@@ -48,6 +48,8 @@ class jkInterpolator(object):
             self.progress = progressWindow
         else:
             self.progress = None
+        
+        self.postInterpolateCallback = postInterpolateCallback
         
         if exists("/usr/bin/terminal-notifier"):
             self.use_notifications = True
@@ -97,6 +99,8 @@ class jkInterpolator(object):
             if font.info.openTypeOS2Panose is not None:
                 font.info.openTypeOS2Panose[2] = panose_weight
             font.features.text = instance.features
+            if self.postInterpolateCallback is not None:
+                self.postInterpolateCallback(font)
             instance.font = font
         if self.progress is not None:
             p.close()
