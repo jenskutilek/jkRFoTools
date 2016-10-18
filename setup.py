@@ -10,6 +10,9 @@ setup(
 		url = "https://github.com/jenskutilek/jkRFoTools",
 		license = "MIT",
 		platforms = ["Mac"],
-		packages = ["jkRFoTools"],
+		packages = [
+			"jkRFoTools",
+			"jkRFoTools/pens",
+		],
 		package_dir = {"": "Lib"},
 	)
