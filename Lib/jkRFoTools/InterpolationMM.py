@@ -190,6 +190,7 @@ class jkInterpolator(object):
                 #print(u'Incompatible glyph: %s' % glyphName)
                 targetFont.newGlyph(glyphName)
                 continue
+        targetFont.glyphOrder = glyphSet
     
     def fix_component_order(self, source_glyph, target_glyph):
         pass
