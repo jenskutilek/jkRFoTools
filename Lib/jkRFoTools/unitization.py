@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 class UnitizationInfo(object):
     def __init__(self):
         self.systems = {}
@@ -67,14 +70,14 @@ unitization_info.add_system(UnitSystem("IBM Executive", 5, 2, 5, "fixed", {
     4: ["w", "A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "N", "O", "P", "Q", "R", "T", "U", "V", "X", "Y", "Z",
         "&"],
     5: ["m", "W", "M",
-        "@", "%", "_", "½", "¼"],
+        "@", "%", "_", u"½", u"¼"],
 }))
 unitization_info.add_system(UnitSystem("Mag Card Executive", 7, 3, 7, "fixed", {
     3: ["i", "j", "l"],
     4: ["f", "t", "I", "'"],
     5: ["a", "c", "e", "h", "k", "n", "o", "r", "s", "u", "v", "x", "z", "J",
         "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-        ".", ",", ":", ";", "!", "?", '"', "@", "#", "$", "&", "¢", "(", ")", "+", "-", "*", "/", "=", "_", "½", "¼", " "],
+        ".", ",", ":", ";", "!", "?", '"', "@", "#", "$", "&", "¢", "(", ")", "+", "-", "*", "/", "=", "_", u"½", u"¼", " "],
     6: ["b", "d", "g", "p", "q", "y", "E", "F", "L", "P", "S", "Z"],
     7: ["m", "w", "A", "B", "C", "D", "G", "H", "K", "M", "N", "O", "Q", "R", "T", "U", "V", "W", "X", "Y"],
 }))
@@ -84,12 +87,12 @@ unitization_info.add_system(UnitSystem("IBM Selectric Composer", 9, 3, 9, "fixed
     4: ["f", "t", "r", "s", "I",
         ":", "!", "(", ")", "/"],
     5: ["a", "c", "e", "g", "z", "J", "["],
-    6: ["b", "d", "h", "k", "n", "p", "q", "u", "v", "x", "y", "P", "S",
+    6: ["b", "d", "h", "k", "n", "o", "p", "q", "u", "v", "x", "y", "P", "S",
         "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-        "]", "+", "*", "=", "$", "†"],
+        "]", "+", "*", "=", "$", u"†"],
     7: ["B", "C", "E", "F", "L", "T", "Z"],
     8: ["w", "A", "D", "G", "H", "K", "N", "O", "Q", "R", "U", "V", "X", "Y",
-        "&", "@", "%", "½", "¼", "¾", "—"],
+        u"&", u"@", u"%", u"½", u"¼", u"¾", u"—"],
     9: ["m", "W", "M"],
 }))
 unitization_info.add_system(UnitSystem("Monotype hot metal and early photo typesetting", 18, 0, 18, "free"))
